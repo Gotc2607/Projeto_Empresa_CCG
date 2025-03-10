@@ -1,0 +1,221 @@
+body{
+    margin: 0;
+}
+
+:root{
+    --sites-height: 400px;
+    --sites-width: calc(var(--sites-height) / 1.5);
+}
+*{
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+    background-color: black;
+    border-bottom: 1px solid blueviolet;
+}
+.navbar a{
+    text-decoration: none;
+    margin: auto;
+    margin-bottom: 5px;
+    background-color: blueviolet;
+    color: black;
+    padding: 10px 20px;
+}
+
+.navbar a:hover{
+    background-color: black;
+    color: blueviolet;
+    border: 1px solid blueviolet;
+}
+
+.banner-container{
+    background: linear-gradient(to bottom, black, rgb(3, 2, 87));
+    display: flex;
+}
+
+.container1{
+    border: 5px solid cyan;
+    margin: 10px;
+    padding: 10px;
+    width: 40%;
+    height: 100vh;
+    text-align: center;
+    color: white;
+}
+
+.banner-container img{
+    width: 400px;
+    height: 200px;
+}
+
+.sites-container{
+    background: linear-gradient(to top, black, rgb(3, 2, 87));
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sites{
+    width: var(--sites-width);
+    height: var(--sites-height);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 36px;
+    perspective: 2500px;
+    border-radius: 5px;
+    margin: 0 50px;
+}
+.cover-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.wrapper{
+    transition: all 0.5s;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    border-radius: 5px;
+}
+
+.sites:hover .wrapper{
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0,0,0,0.75);
+    border-radius: 5px;
+    filter: grayscale(100%);
+
+}
+
+.wrapper::before,
+.wrapper::after{
+    content: "";
+    opacity: 0;
+    width: 100%;
+    height: 80px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+    border-radius: 5px;
+
+}
+
+.wrapper::before{
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(to top, transparent 46%, rgba(12,13,19,0.5) 68%, rgba(12,13,19) 97%);
+    border-radius: 5px;
+}
+.wrapper::after{
+    bottom: 0;
+    opacity: 1;
+    background-image: linear-gradient(to bottom, transparent 46%, rgba(12,13,19,0.5) 68%, rgba(12,13,19) 97%);
+    border-radius: 5px;
+}
+
+.sites:hover .wrapper::before,
+.wrapper::after{
+    opacity: 1;
+}
+
+.sites:hover .wrapper::after{
+    height: 120px;
+}
+
+.title{
+    width: 70%;
+    opacity: 0;
+    transition: transform 0.5s;
+}
+
+.sites:hover .title{
+    opacity: 1;
+    transform: translate3d(0% ,-50%, 100px);
+}
+
+.character{
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1; 
+}
+
+.sites:hover .character{
+    opacity: 1;
+    transform: translate3d(0%, -30%, 100px);
+}
+.card1{
+    border:  5px solid cyan;
+    box-shadow: 0px 0px 15px cyan,
+                0px 0px 15px cyan inset;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+}
+.card2{
+    border:  5px solid purple;
+    box-shadow: 0px 0px 15px purple,
+                0px 0px 15px purple inset;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+}
+
+.card3{
+    border:  5px solid red;
+    box-shadow: 0px 0px 15px red,
+                0px 0px 15px red inset;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+}
+
+
+.card1 h3{
+    color: white;
+    text-shadow: 0px 0px 10px cyan,
+                 0px 0px 20px cyan,
+                 0px 0px 30px cyan,
+                 0px 0px 40px cyan;
+
+    font-size: 30px;
+}
+.card2 h3{
+    color: white;
+    text-shadow: 0px 0px 10px blueviolet,
+                 0px 0px 20px blueviolet,
+                 0px 0px 30px blueviolet,
+                 0px 0px 40px blueviolet;
+
+    font-size: 30px;
+}
+.card3 h3{
+    color: white;
+    text-shadow: 0px 0px 10px red,
+                 0px 0px 20px red,
+                 0px 0px 30px red,
+                 0px 0px 40px red;
+
+    font-size: 30px;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    height: 50px;
+    border-top: 1px solid blueviolet;
+    margin: 0px;
+    padding: 20px;
+}

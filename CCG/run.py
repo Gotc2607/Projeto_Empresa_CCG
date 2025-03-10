@@ -1,3 +1,4 @@
+#rodando todos os sites ao mesmo tempo
 import subprocess
 
 subprocess.Popen(['python', 'Pagina_inicial/routes.py'])
