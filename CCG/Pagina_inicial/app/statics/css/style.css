@@ -1,7 +1,33 @@
 body{
     margin: 0;
+    background-color: black;
+    padding-top: 70px;
+}
+/* header */
+/* banner */
+/* sites */
+/* footer */
+.label-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
+#label{
+    height: 90px;
+    width: var(--sites-width);
+    padding: 8px;
+    margin: 30px;
+    border-radius: 15px;
+    border-bottom: 2px solid rgb(12, 8, 240);   
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 10px rgb(12, 8, 240),
+                 0px 0px 20px rgb(12, 8, 240),
+                 0px 0px 30px rgb(12, 8, 240),
+                 0px 0px 40px rgb(12, 8, 240);
+}
 
 :root{
     --sites-height: 400px;
@@ -10,32 +36,85 @@ body{
 *{
     box-sizing: border-box;
 }
-.navbar{
-    display: flex;
+.header{
     background-color: black;
-    border-bottom: 1px solid blueviolet;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+    border-bottom: 1px solid rgb(12, 8, 240);
+    padding: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
 }
-.navbar a{
+
+.logo{
+    justify-content: left;
+    color: white;
+    margin: 10px;
+    text-shadow: 0px 0px 10px rgb(12, 8, 240),
+                 0px 0px 20px rgb(12, 8, 240),
+                 0px 0px 30px rgb(12, 8, 240),
+                 0px 0px 40px rgb(12, 8, 240);
+}
+.img{
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+}
+.img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgb(12, 8, 240),
+                0px 0px 10px rgb(12, 8, 240),
+                0px 0px 10px rgb(12, 8, 240),
+                0px 0px 10px rgb(12, 8, 240);
+}
+.nav{
+    justify-content: center;
+}
+.nav a{
+    border-radius: 15px;
+    border-bottom: 2px solid rgb(12, 8, 240);
     text-decoration: none;
-    margin: auto;
-    margin-bottom: 5px;
-    background-color: blueviolet;
-    color: black;
+    margin: 5px;
+    color: white;
+    text-shadow: 0px 0px 10px rgb(12, 8, 240),
+                 0px 0px 20px rgb(12, 8, 240),
+                 0px 0px 30px rgb(12, 8, 240),
+                 0px 0px 40px rgb(12, 8, 240);
     padding: 10px 20px;
 }
 
-.navbar a:hover{
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Espaçamento entre os links */
+}
+
+.nav a:hover{
     background-color: black;
-    color: blueviolet;
-    border: 1px solid blueviolet;
+    color: white;
+    border: 1px solid rgb(12, 8, 240);
+    box-shadow: 0px 0px 10px rgb(12, 8, 240),
+                0px 0px 10px rgb(12, 8, 240),
+                0px 0px 10px rgb(12, 8, 240),
+                0px 0px 10px rgb(12, 8, 240);
 }
 
 .banner-container{
-    background: linear-gradient(to bottom, black, rgb(3, 2, 87));
     display: flex;
 }
 
 .container1{
+    background-color: rgb(37, 36, 36);
+    border-radius: 15px;
     margin: 10px;
     padding: 10px;
     width: 50%;
@@ -43,6 +122,7 @@ body{
     text-align: left;
     color: wheat;
     font-size: 14px;
+    box-shadow: 0px 0px 20px rgb(11, 11, 212);
     text-shadow: 0px 0px 10px rgb(12, 8, 240),
                  0px 0px 20px rgb(12, 8, 240),
                  0px 0px 30px rgb(12, 8, 240),
@@ -96,7 +176,7 @@ body{
     width: 100%;
     height: 6px;
     background: white;
-    z-index: 1000;
+    z-index: 900;
     transition: 1.5s;
 }
 .box:hover{
@@ -125,7 +205,6 @@ body{
 
 
 .sites-container{
-    background: linear-gradient(to top, black, rgb(3, 2, 87));
     width: 100vw;
     height: 100vh;
     margin: 0;
@@ -230,6 +309,8 @@ body{
     transform: translate3d(0%, -30%, 100px);
 }
 .card1{
+    border-radius: 15px;
+    background-color: rgb(37, 36, 36);
     border:  5px solid cyan;
     box-shadow: 0px 0px 15px cyan,
                 0px 0px 15px cyan inset;
@@ -238,6 +319,8 @@ body{
     padding: 5px;
 }
 .card2{
+    border-radius: 15px;
+    background-color: rgb(37, 36, 36);
     border:  5px solid purple;
     box-shadow: 0px 0px 15px purple,
                 0px 0px 15px purple inset;
@@ -247,6 +330,8 @@ body{
 }
 
 .card3{
+    border-radius: 15px;
+    background-color: rgb(37, 36, 36);
     border:  5px solid red;
     box-shadow: 0px 0px 15px red,
                 0px 0px 15px red inset;
@@ -287,10 +372,15 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: rgb(37, 36, 36);
+    text-shadow: 0px 0px 10px rgb(12, 8, 240),
+                 0px 0px 20px rgb(12, 8, 240),
+                 0px 0px 30px rgb(12, 8, 240),
+                 0px 0px 40px rgb(12, 8, 240);
     color: white;
-    height: 50px;
-    border-top: 1px solid blueviolet;
+    height: 100px;
+    border-top: 1px solid rgb(12, 8, 240);
+    box-shadow: 0px 0px 20px rgb(11, 11, 212);
     margin: 0px;
     padding: 20px;
 }

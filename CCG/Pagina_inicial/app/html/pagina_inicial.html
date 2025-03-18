@@ -7,13 +7,31 @@
     <link rel="stylesheet" href="../statics/css/style.css">
 </head>
 <body >
-    <header class= 'navbar'>
-        <a href="">sobre nós </a>
-        <a href=""> sites da empresa</a>
+    <header class="header">
+        <div class="logo">
+            <h1>CCG interprise</h1>
+        </div>
+
+        <nav class="nav">
+            <ul>
+                <li> <a href="#sobre">sobre nós </a></li>
+                <li><a href="#sites">sites da empresa</a></li>
+            </ul>
+        </nav>
+
+        <div class="img">
+            <img src="../statics/img/logo-da-empresa.webp" alt="imagen-empresa">
+        </div>
+
     </header>
 
+    <section class="label-container">
+        <div id="label">
+            <h1>Sobre nós</h1>
+        </div>
+    </section>
 
-    <section class="banner-container">
+    <section class="banner-container" id="sobre">
         <div class="container1">
             <h1>Empresa CCG</h1>
             <p>     A CCG é uma empresa revolucionária que une tecnologia, entretenimento e serviços para oferecer  a        melhor experiência ao público. Com três grandes setores especializados, a CCG atende diversas      necessidades, proporcionando qualidade, inovação e praticidade.
@@ -50,9 +68,13 @@
 
     </section>
 
+    <section class="label-container">
+        <div id="label">
+            <h1>Sites da Empresa</h1>
+        </div>
+    </section>
 
-
-    <section class="sites-container">
+    <section class="sites-container" id="sites">
         <div class="card1">
             <h3>Petshop Sushalu</h3>
             <a href="">
@@ -78,7 +100,7 @@
             </a>
         </div>
         <div class="card3">
-            <h3>ola</h3>
+            <h3>CCG strimming</h3>
             <a href="">
                 <div class = 'sites'> 
                     <div class = 'wrapper'>
@@ -89,6 +111,9 @@
             </a>
         </div>
     </section>
+    
     <footer> @Todos os direitos reservados</footer>
+
+    <script src="../statics/js/scripty.js"></script>
 </body>
 </html>
