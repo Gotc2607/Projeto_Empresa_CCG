@@ -315,8 +315,15 @@ body{
     box-shadow: 0px 0px 15px cyan,
                 0px 0px 15px cyan inset;
     text-align: center;
-    margin: 5px;
+    margin: 10px;
     padding: 5px;
+    color: white;
+    text-shadow: 0px 0px 10px cyan,
+                 0px 0px 20px cyan,
+                 0px 0px 30px cyan,
+                 0px 0px 40px cyan;
+
+    font-size: 30px;
 }
 .card2{
     border-radius: 15px;
@@ -325,8 +332,15 @@ body{
     box-shadow: 0px 0px 15px purple,
                 0px 0px 15px purple inset;
     text-align: center;
-    margin: 5px;
+    margin: 10px;
     padding: 5px;
+    color: white;
+    text-shadow: 0px 0px 10px blueviolet,
+                 0px 0px 20px blueviolet,
+                 0px 0px 30px blueviolet,
+                 0px 0px 40px blueviolet;
+
+    font-size: 30px;
 }
 
 .card3{
@@ -336,30 +350,8 @@ body{
     box-shadow: 0px 0px 15px red,
                 0px 0px 15px red inset;
     text-align: center;
-    margin: 5px;
+    margin: 10px;
     padding: 5px;
-}
-
-
-.card1 h3{
-    color: white;
-    text-shadow: 0px 0px 10px cyan,
-                 0px 0px 20px cyan,
-                 0px 0px 30px cyan,
-                 0px 0px 40px cyan;
-
-    font-size: 30px;
-}
-.card2 h3{
-    color: white;
-    text-shadow: 0px 0px 10px blueviolet,
-                 0px 0px 20px blueviolet,
-                 0px 0px 30px blueviolet,
-                 0px 0px 40px blueviolet;
-
-    font-size: 30px;
-}
-.card3 h3{
     color: white;
     text-shadow: 0px 0px 10px red,
                  0px 0px 20px red,
@@ -368,6 +360,7 @@ body{
 
     font-size: 30px;
 }
+
 footer {
     display: flex;
     justify-content: center;
