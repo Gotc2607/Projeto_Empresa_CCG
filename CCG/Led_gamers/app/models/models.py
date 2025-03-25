@@ -15,4 +15,13 @@ class Produto:
 
 class Model:
     def __init__(self):
-        
+        self.db = BancoDeDados()
+
+
+
+
+    def adicionar_usuario(self, nome, senha, email):
+        if self.db.adicionar_usuario(nome, senha, email):
+            return True
+        else:
+            return False
