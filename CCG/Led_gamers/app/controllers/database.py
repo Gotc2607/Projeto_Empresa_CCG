@@ -46,8 +46,7 @@ class BancoDeDados:
 
     #adicionar um novo usuario
     def adicionar_usuario(self, nome, senha, email):
-        senha_hash = self.criptografar_senha(senha)
-        self.cursor.execute('INSERT INTO usuario (nome, senha, email) VALUES (?, ?, ?)', (nome, senha_hash, email))
+        self.cursor.execute('INSERT INTO usuario (nome, senha, email) VALUES (?, ?, ?)', (nome, senha , email))
 
     #criptografar a senha
     def criptografar_senha(self, senha):
@@ -57,6 +56,24 @@ class BancoDeDados:
     #verificar se a senha é a mesma que a senha_hash  
     def verificar_senha(self, senha, senha_hash):
         if bcrypt.checkpw(senha.encode(), senha_hash):
+            return True
+        else:
+            return False
+
+    #verificar se o usuario existe
+    def verificar_usuario(self, nome):
+        self.cursor.execute('SELECT * FROM usuario WHERE nome = ?', (nome,))
+        usuario = self.cursor.fetchone()
+        if usuario:
+            return True
+        else:
+            return False
+
+    #autenticar o usuario
+    def autenticar_usuario(self, nome, senha):
+        self.cursor.execute('SELECT senha FROM usuario WHERE nome = ?', (nome,))
+        senha_hash = self.cursor.fetchone()[0]
+        if self.verificar_senha(senha, senha_hash):
             return True
         else:
             return False

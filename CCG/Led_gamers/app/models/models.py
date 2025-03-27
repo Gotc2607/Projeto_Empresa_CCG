@@ -1,4 +1,4 @@
-
+from app.models.banco import BancoDeDados
 
 class Usuario:
     def __init__(self, nome, senha, email):
@@ -19,9 +19,19 @@ class Model:
 
 
 
+    #cadastro de novos usuarios
+    def cadastro(self, nome, senha, email):
+        if not self.db.verificar_usuario(nome):
+            senha_hash = self.db.criptografar_senha(senha)
+            self.db.adicionar_usuario(nome, senha_hash, email)
 
-    def adicionar_usuario(self, nome, senha, email):
-        if self.db.adicionar_usuario(nome, senha, email):
+            return True
+        else:
+            return False
+
+    #login dos usuarios
+    def login(self, nome, senha):
+        if autenticar_usuario(nome, senha):
             return True
         else:
             return False
