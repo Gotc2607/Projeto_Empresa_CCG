@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Border Login Form</title>
+  <link rel="stylesheet" href="../statics/css/style_login.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+</head>
+<body>
+
+  <canvas id="neon-trail"></canvas>
+
+  <div class="container">
+    <div class="flip-card" id="flip-card">
+      <!-- Tela de Login -->
+      <div class="flip-card-front">
+        <div class="box">
+          <div class="login">
+            <div class="loginBx">
+              <h2>
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <span class="text">LOGIN</span>
+                <i class="fas fa-headset"></i>
+              </h2>
+              <div class="form-container">
+                <form  id="loginForm" onsubmit="submitForm(event, 'login')">
+                  <input type="text" placeholder="Username" name="nome" required>
+                  <input type="password" placeholder="Password" name="senha" required>
+                  <input type="submit" value="Entrar">
+                </form>
+              </div>
+              <div class="group">
+                <a href="#">Esqueceu a senha?</a>
+                <a href="#" onclick="flip()">Cadastre-se</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tela de Cadastro -->
+      <div class="flip-card-back">
+        <div class="box">
+          <div class="login">
+            <div class="loginBx">
+              <h2>
+                <i class="fa-solid fa-user-plus"></i>
+                <span class="text">CADASTRO</span>
+                <i class="fas fa-headset"></i>
+              </h2>
+              <div class="form-container">
+                <form id="cadastroForm" onsubmit="submitForm(event, 'cadastro')">
+                  <input type="text" placeholder="Username" name="nome" required>
+                  <input type="password" placeholder="Password" name="senha" required>
+                  <input type="text" placeholder="Email" name="email" required>
+                  <input type="submit" value="cadastrar">
+                </form>
+              </div>
+              <div class="group">
+                <a href="#" onclick="flip()">Voltar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../statics/js/script.js" ></script>
+</body>
+</html>

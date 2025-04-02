@@ -340,3 +340,17 @@ h2 i {
 body, input, button, a, .box {
   cursor: none;
 }
+
+/* Mensagens de erro */
+.error-message {
+    color: #ff6b6b;
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(255, 0, 0, 0.1);
+    border-radius: 5px;
+    border-left: 3px solid #ff6b6b;
+}
+
+.error-message p {
+    margin: 5px 0;
+}
