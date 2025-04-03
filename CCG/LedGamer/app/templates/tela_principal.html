@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja com Navegação 3D</title>
+    <link rel="stylesheet" href="../static/css/style_principal.css">
+    <!-- Evita erro de favicon -->
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <!-- Coluna da esquerda - Navegação -->
+    <section class="navbar-container">
+        <div class="navbar">
+            <h2>Menu</h2>
+            <ul id="navMenu">
+                <li data-target="inicio" class="active"><i class="icon-home"></i> Início</li>
+                <li data-target="produtos"><i class="icon-products"></i> Produtos</li>
+                <li data-target="ofertas"><i class="icon-offers"></i> Ofertas</li>
+                <li data-target="config"><i class="icon-config"></i> Configurações</li>
+                <li data-target="sobre"><i class="icon-about"></i> Sobre Nós</li>
+                <li data-target="contato"><i class="icon-contact"></i> Contato</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- Coluna do meio - Cubo 3D -->
+    <section class="container-principal">
+        <div class="content-column">
+            <div class="cube-3d-wrapper" id="cube">
+                <!-- Face Inicial -->
+                <div class="cube-face" id="inicio">
+                    <h2>Bem-vindo à Nossa Loja</h2>
+                    <p>Descubra os melhores produtos com os melhores preços!</p>
+                    <button class="btn">Explorar Produtos</button>
+                </div>
+                
+                <!-- Face Produtos -->
+                <div class="cube-face" id="produtos">
+                    <h2>Nossos Produtos</h2>
+                    <p>Confira nossa seleção exclusiva de produtos de alta qualidade.</p>
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <div class="product-icon">📱</div>
+                            <p>Smartphones</p>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">💻</div>
+                            <p>Notebooks</p>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">🎧</div>
+                            <p>Acessórios</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Face Ofertas -->
+                <div class="cube-face" id="ofertas">
+                    <h2>Ofertas Especiais</h2>
+                    <p>Aproveite nossas promoções por tempo limitado!</p>
+                    <div class="offer-banner">
+                        <p>BLACK FRIDAY - ATÉ 70% OFF</p>
+                    </div>
+                </div>
+                
+                <!-- Face Configurações -->
+                <div class="cube-face" id="config">
+                    <h2>Configurações</h2>
+                    <p>Personalize sua experiência na loja.</p>
+                    <div class="settings-options">
+                        <label>
+                            <input type="checkbox" id="notifications"> Receber notificações
+                        </label>
+                        <label>
+                            <input type="checkbox" id="newsletter"> Assinar newsletter
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Face Sobre -->
+                <div class="cube-face" id="sobre">
+                    <h2>Sobre Nós</h2>
+                    <p>Somos uma loja comprometida com a qualidade e satisfação dos nossos clientes desde 2010.</p>
+                    <button class="btn">Nossa História</button>
+                </div>
+                
+                <!-- Face Contato -->
+                <div class="cube-face" id="contato">
+                    <h2>Fale Conosco</h2>
+                    <p>Estamos aqui para ajudar! Entre em contato através dos canais abaixo:</p>
+                    <div class="contact-info">
+                        <p>📧 contato@minhaloja.com</p>
+                        <p>📞 (11) 1234-5678</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coluna da direita - Controle de Tema -->
+    <section class="theme-container">
+        <div class="theme-column">
+            <h2>Temas</h2>
+            <div class="theme-options">
+                <div class="theme-option" id="lightTheme">🌞 Claro</div>
+                <div class="theme-option" id="darkTheme">🌙 Escuro</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Script no final do body para garantir que o DOM esteja carregado -->
+    <script src="../static/js/scripty_principal.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+/* style_principal.css */
+:root {
+    /* Cores */
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --primary-color: #4a6fa5;
+    --secondary-color: #166088;
+    --accent-color: #4fc3a1;
+    
+    /* Dimensões */
+    --nav-width: 250px;
+    --theme-width: 180px;
+    --section-gap: 10px;
+    --cube-size: min(60vh, 60vw);
+    
+    /* Estilos */
+    --border-radius: 8px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme {
+    --bg-color: #222;
+    --text-color: #f5f5f5;
+    --primary-color: #166088;
+    --secondary-color: #4a6fa5;
+    --accent-color: #3a9278;
+}
+
+/* Estrutura Principal */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: var(--nav-width) 1fr var(--theme-width);
+    grid-template-areas: "navbar main theme";
+    gap: var(--section-gap);
+    padding: var(--section-gap);
+    overflow-x: hidden;
+}
+
+/* Container do Cubo 3D */
+.container-principal {
+    grid-area: main;
+    height: calc(100vh - 2 * var(--section-gap));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 2000px;
+}
+
+.cube-3d-wrapper {
+    width: var(--cube-size);
+    height: var(--cube-size);
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Faces do Cubo */
+.cube-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Posicionamento Matemático Perfeito */
+#inicio {
+    transform: translateZ(calc(var(--cube-size)/2));
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+#produtos {
+    transform: rotateY(90deg) translateZ(calc(var(--cube-size)/2));
+    background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
+}
+
+#ofertas {
+    transform: rotateY(180deg) translateZ(calc(var(--cube-size)/2));
+    background: linear-gradient(135deg, #fff8e1 0%, #ffd54f 100%);
+}
+
+#config {
+    transform: rotateY(-90deg) translateZ(calc(var(--cube-size)/2));
+    background: linear-gradient(135deg, #f1f8e9 0%, #aed581 100%);
+}
+
+#sobre {
+    transform: rotateX(90deg) translateZ(calc(var(--cube-size)/2));
+    background: linear-gradient(135deg, #e8f5e9 0%, #81c784 100%);
+}
+
+#contato {
+    transform: rotateX(-90deg) translateZ(calc(var(--cube-size)/2));
+    background: linear-gradient(135deg, #f3e5f5 0%, #ba68c8 100%);
+}
+
+/* Detalhes Visuais */
+.cube-face::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--border-radius);
+    pointer-events: none;
+}
+
+.cube-3d-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%, transparent 70%);
+    transform: translateZ(calc(var(--cube-size)/-2 - 10px));
+    border-radius: var(--border-radius);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    :root {
+        --cube-size: min(70vh, 70vw);
+    }
+    
+    body {
+        grid-template-columns: var(--nav-width) 1fr;
+        grid-template-areas: "navbar main";
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --cube-size: 80vw;
+    }
+    
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "navbar"
+            "main"
+            "theme";
+    }
+    
+    .container-principal {
+        height: 80vw;
+    }
+    
+    .cube-3d-wrapper {
+        transform-style: flat;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+    
+    .cube-face {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        position: relative;
+        transform: none !important;
+        display: none;
+    }
+    
+    .cube-face.active {
+        display: flex;
+    }
+}

@@ -18,13 +18,14 @@ def login():
         
         if not nome or not senha:
             flash('Preencha todos os campos', 'error')
-            return redirect(url_for('auth.tela_login'))
+            return redirect(url_for('auth.tela_login'), message='Preencha todos os campos')
+
         
         usuario = Usuario.query.filter_by(nome=nome).first()
         
         if not usuario or not check_password_hash(usuario.senha, senha):
             flash('Credenciais inválidas', 'error')
-            return redirect(url_for('auth.tela_login'))
+            return redirect(url_for('auth.tela_login'), message='Credenciais inválidas')
         
         login_user(usuario)
         flash('Login realizado com sucesso!', 'success')
@@ -43,11 +44,11 @@ def cadastro():
         
         if not all([email, nome, senha]):
             flash('Preencha todos os campos', 'error')
-            return redirect(url_for('auth.tela_login'))
+            return redirect(url_for('auth.tela_login'), message='Preencha todos os campos')
         
         if Usuario.query.filter_by(email=email).first():
             flash('Email já cadastrado', 'error')
-            return redirect(url_for('auth.tela_login'))
+            return redirect(url_for('auth.tela_login'), message='Email já cadastrado')
         
         novo_usuario = Usuario(
             email=email,
