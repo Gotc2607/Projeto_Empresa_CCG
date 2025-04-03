@@ -1,25 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    {% extends "base.html" %}
 
-    {% block title %}Produtos{% endblock %}
+    <section class="navbar-container">
+        <div class="navbar">
 
-    {% block content %}
-    <h2>Nossos Produtos</h2>
-    <div class="produtos">
-        {% for produto in produtos %}
-        <div class="produto">
-            <h3><a href="{{ url_for('produto.detalhes', id=produto.id) }}">{{ produto.nome }}</a></h3>
-            <p>R$ {{ "%.2f"|format(produto.preco) }}</p>
         </div>
-        {% endfor %}
-    </div>
-    {% endblock %}
+    </section>
+
+    <section class="flip-container">
+        <div class="flip-card" id="flip-card">
+
+            <div class="flip-card-inicial">
+
+            </div>
+
+            <div class="flip-card-perfil">
+
+            </div>
+
+            <div class="flip-card-configuracoes">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="stylebar-container">
+        <div class="stylebar">
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+
+        </div>
+    </footer>
+    
 </body>
 </html>
